@@ -1,8 +1,6 @@
-import GlobalFonts from './fonts/fonts';
-import GlobalStyle from './globalStyles';
-import myTheme from './my-theme';
-import media from './responsive';
-import typography from './typography';
-import misc from './misc';
-
-export { GlobalStyle, GlobalFonts, misc, typography, media, myTheme };
+export { default as GlobalStyle } from './globalStyles';
+export { default as myTheme } from './my-theme';
+export { default as media } from './responsive';
+export { default as typography } from './typography';
+export { default as misc } from './misc';
+export { Button, CustomLink } from './extended';

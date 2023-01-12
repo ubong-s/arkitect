@@ -6,8 +6,8 @@ import media from './responsive';
 const bodyStyles = css`
   font-family: ${typography.type.primary};
   font-weight: 400;
-  font-size: 1.2rem;
-  background-color: ${(props) => props.theme.colors.white};
+  font-size: 1.4rem;
+  background-color: ${(props) => props.theme.colors.default};
   color: ${(props) => props.theme.colors.default};
   border-radius: 4.8rem;
   line-height: 1.8;
@@ -30,7 +30,7 @@ const bodyStyles = css`
   }
 
   ${media.tablet} {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     border-radius: 7.2rem;
   }
 
@@ -49,6 +49,10 @@ const bodyStyles = css`
 
   main {
     min-height: 100vh;
+
+    ${media.desktop} {
+      margin-bottom: 60rem;
+    }
   }
 
   h1 {
@@ -108,37 +112,8 @@ const bodyStyles = css`
   }
 
   a {
+    position: relative;
     text-decoration: none;
-    letter-spacing: 0.03rem;
-  }
-
-  input,
-  textarea {
-    font-size: 0.875rem;
-    outline: none;
-
-    ${media.tablet} {
-      font-size: 1rem;
-    }
-  }
-
-  button {
-    cursor: pointer;
-    font-size: 0.8rem;
-    border: none;
-    padding: 1rem 2rem;
-    background-color: transparent;
-    border: 2px solid ${(props) => props.theme.colors.default};
-    transition: ${misc.transition};
-
-    &:hover {
-      opacity: 0.85;
-      transition: ${misc.transition.ease};
-    }
-
-    ${media.tablet} {
-      font-size: 0.825rem;
-    }
   }
 `;
 
@@ -149,14 +124,143 @@ const htmlStyles = css`
   padding: 1.6rem;
 `;
 
-const GlobalStyle = createGlobalStyle`
-   html {
-      ${htmlStyles}
-   }
+const resetStyles = css`
+  html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol,
+  ul {
+    list-style: none;
+  }
+  blockquote,
+  q {
+    quotes: none;
+  }
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+`;
 
-   body {
-      ${bodyStyles}
-   }
+const GlobalStyle = createGlobalStyle`
+  ${resetStyles}
+
+  html {
+    ${htmlStyles}
+  }
+
+  body {
+    ${bodyStyles}
+  }
 `;
 
 export default GlobalStyle;

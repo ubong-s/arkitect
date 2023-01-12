@@ -7,8 +7,8 @@ const ContainerRoot = styled.div`
   max-width: 1600px;
 `;
 
-const Container: FC<{ children: ReactNode }> = () => {
-  return <ContainerRoot>Container</ContainerRoot>;
+const Container: FC<{ children: ReactNode }> = ({ children }) => {
+  return <ContainerRoot>{children}</ContainerRoot>;
 };
 
 export default Container;
