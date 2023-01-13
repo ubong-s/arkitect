@@ -16,7 +16,7 @@ export const DefaultButton = styled.button`
   transition: ${misc.transition};
   text-transform: uppercase;
   font-weight: 500;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2.25rem;
 
   &:hover {
     transition: ${misc.transition.ease};

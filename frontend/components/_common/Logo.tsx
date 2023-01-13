@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import React, { FC } from 'react';
 
-const Logo: FC<{ pathFill?: 'white' | 'black' }> = ({ pathFill = 'white' }) => {
+const Logo: FC<{ pathFill?: 'white' | 'black'; onClick?: () => void }> = ({
+  pathFill = 'white',
+  onClick,
+}) => {
   return (
-    <Link href='/'>
+    <Link href='/' {...onClick}>
       <svg
         width='92'
         height='17'

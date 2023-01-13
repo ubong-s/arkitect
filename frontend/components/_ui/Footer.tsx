@@ -17,10 +17,12 @@ const FooterRoot = styled.footer`
 
   ${media.desktop} {
     position: fixed;
+    z-index: -1;
     bottom: 0;
     width: 100%;
-    z-index: -1;
-    padding: 14rem 0 8rem;
+    display: flex;
+    align-items: center;
+    padding: 12rem 0 0;
     height: 60rem;
   }
 `;
@@ -70,6 +72,7 @@ const FooterColumn = styled.div`
     color: ${(props) => props.theme.colors.white};
     text-transform: uppercase;
     font-size: 1.6rem;
+    line-height: 1;
   }
 
   .link__list {
@@ -113,7 +116,12 @@ const FooterColumn = styled.div`
 const FooterCopyright = styled.div`
   p {
     color: ${(props) => props.theme.colors.white};
-    text-align: center;
+  }
+
+  ${media.desktop} {
+    p {
+      text-align: center;
+    }
   }
 `;
 

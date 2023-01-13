@@ -11,6 +11,8 @@ const bodyStyles = css`
   color: ${(props) => props.theme.colors.default};
   line-height: 1.8;
   max-width: 1888px;
+  background-color: ${(props) => props.theme.colors.default};
+  padding: 1.6rem;
   margin: auto;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -48,8 +50,16 @@ const bodyStyles = css`
 
   main {
     min-height: 100vh;
+    background-color: ${(props) => props.theme.colors.white};
+
+    border-radius: 4.8rem;
+
+    ${media.tablet} {
+      border-radius: 7.2rem;
+    }
 
     ${media.desktop} {
+      border-radius: 9.6rem;
       margin-bottom: 60rem;
     }
   }
@@ -117,16 +127,19 @@ const bodyStyles = css`
   }
 
   a {
+    cursor: pointer;
     position: relative;
     text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
   }
 `;
 
 const htmlStyles = css`
   scroll-behavior: smooth;
   font-size: 10px;
-  background-color: ${(props) => props.theme.colors.default};
-  padding: 1.6rem;
 `;
 
 const resetStyles = css`

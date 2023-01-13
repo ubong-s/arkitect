@@ -4,17 +4,7 @@ import { GlobalStyle, myTheme, media } from '../../styles';
 import { Footer, Navbar } from '../_ui';
 
 const PageWrap = styled.div`
-  background-color: ${(props) => props.theme.colors.white};
-  color: ${(props) => props.theme.colors.default};
-  border-radius: 4.8rem;
-
-  ${media.tablet} {
-    border-radius: 7.2rem;
-  }
-
-  ${media.desktop} {
-    border-radius: 9.6rem;
-  }
+  position: relative;
 `;
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {

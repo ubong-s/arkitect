@@ -14,7 +14,7 @@ const CallToActionRoot = styled.section`
   text-align: center;
   max-width: 100rem;
   margin: auto;
-  padding: 5rem 0;
+  padding: 5rem 0 7rem;
 
   span {
     text-transform: uppercase;

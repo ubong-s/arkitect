@@ -5,7 +5,7 @@ import { DefaultButton, media } from '../../styles';
 
 const ButtonRoot = styled(DefaultButton)<{ type: string; variant: string }>`
   position: relative;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2.25rem;
 
   ${(props) => {
     switch (props.variant) {
