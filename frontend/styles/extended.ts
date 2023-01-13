@@ -2,25 +2,29 @@ import Link from 'next/link';
 import styled, { css } from 'styled-components';
 import misc from './misc';
 import media from './responsive';
+import typography from './typography';
 
-export const Button = styled.button`
-  button {
-    cursor: pointer;
-    font-size: 0.8rem;
-    border: none;
-    padding: 1rem 2rem;
-    background-color: transparent;
-    border: 2px solid ${(props) => props.theme.colors.default};
-    transition: ${misc.transition};
+export const DefaultButton = styled.button`
+  cursor: pointer;
+  font-family: ${typography.type.primary};
+  font-weight: ${typography.weight.medium};
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  background-color: transparent;
+  border: 2px solid ${(props) => props.theme.colors.gray};
+  border-radius: 50px;
+  transition: ${misc.transition};
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1rem 2rem;
 
-    &:hover {
-      opacity: 0.85;
-      transition: ${misc.transition.ease};
-    }
+  &:hover {
+    transition: ${misc.transition.ease};
+  }
 
-    ${media.tablet} {
-      font-size: 0.825rem;
-    }
+  ${media.tablet} {
+    font-size: 1.6rem;
+    padding: 2rem 3rem;
   }
 `;
 
@@ -70,6 +74,7 @@ export const CustomLink = styled(Link)<{
     props.active &&
     css`
       color: ${(props) => props.theme.colors.muted};
+      opacity: 0.5;
 
       &:after {
         width: 100%;

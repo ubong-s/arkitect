@@ -9,7 +9,6 @@ const bodyStyles = css`
   font-size: 1.4rem;
   background-color: ${(props) => props.theme.colors.default};
   color: ${(props) => props.theme.colors.default};
-  border-radius: 4.8rem;
   line-height: 1.8;
   max-width: 1888px;
   margin: auto;
@@ -55,29 +54,35 @@ const bodyStyles = css`
     }
   }
 
-  h1 {
-    font-weight: ${typography.weight.medium};
-    letter-spacing: 0.03rem;
-    line-height: 3.75rem;
-    color: ${(props) => props.theme.colors.default};
-
-    ${media.desktop} {
-      line-height: 6.25rem;
-    }
-  }
-
+  h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
     font-weight: ${typography.weight.medium};
-    line-height: 2.5rem;
-    letter-spacing: 0.03rem;
+    letter-spacing: 0rem;
+    line-height: 3.75rem;
     color: ${(props) => props.theme.colors.default};
 
+    ${media.tablet} {
+      line-height: 7rem;
+    }
+
     ${media.desktop} {
-      line-height: 3.75rem;
+      line-height: 10.5rem;
+    }
+  }
+
+  h2 {
+    font-size: 3.6rem;
+
+    ${media.tablet} {
+      font-size: 7.2rem;
+    }
+
+    ${media.desktop} {
+      font-size: 9.6rem;
     }
   }
 

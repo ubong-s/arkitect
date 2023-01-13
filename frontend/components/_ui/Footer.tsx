@@ -40,6 +40,10 @@ const FooterLinks = styled.div`
   ${media.desktop} {
     grid-template-columns: 2fr 1fr 1fr 1fr;
   }
+
+  ${media.large} {
+    grid-template-columns: 2.5fr 1fr 1fr 1fr;
+  }
 `;
 
 const FooterColumn = styled.div`
