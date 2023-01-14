@@ -1,5 +1,3 @@
-import Head from 'next/head';
-import Image from 'next/image';
 import { CallToAction, Hero, InnovativeDesign } from '../components';
 
 export default function Home() {

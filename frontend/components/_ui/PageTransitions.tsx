@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import React, { FC, ReactNode, useState, useEffect } from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled, { keyframes } from 'styled-components';
-import { media } from '../../styles';
+import { media, misc } from '../../styles';
 
 const transitionZoom = keyframes`
   0% {
@@ -19,7 +19,7 @@ const transitionZoom = keyframes`
   }
 `;
 
-const transitionSlideLeft = keyframes`
+const transitionSlideOut = keyframes`
   from {
     transform:translateX(0);
   }
@@ -27,7 +27,7 @@ const transitionSlideLeft = keyframes`
     transform: translateX(-100vw);
   }
 `;
-const transitionSlideRight = keyframes`
+const transitionSlideIn = keyframes`
  from {
     transform:translateX(100vw);
   }
@@ -45,6 +45,7 @@ const MainComponent = styled.div<{ routingPageOffset: number }>`
       animation: 1000ms ${transitionZoom} cubic-bezier(0.45, 0, 0.55, 1) both;
       background: white;
       border-radius: 4.8rem;
+      transition: ${misc.transition.ease};
 
       ${media.tablet} {
         border-radius: 7.2rem;
@@ -65,14 +66,12 @@ const MainComponent = styled.div<{ routingPageOffset: number }>`
 
   &.page-exit-active {
     position: relative;
-    animation: 500ms ${transitionSlideLeft} 250ms cubic-bezier(0.37, 0, 0.63, 1)
+    animation: 500ms ${transitionSlideOut} 250ms cubic-bezier(0.37, 0, 0.63, 1)
       both;
-    opacity: 1;
-    backface-visibility: hidden;
-    z-index: 4;
 
     main {
       transform: translateY(-${(props) => props.routingPageOffset}px);
+      transition: ${misc.transition.ease};
     }
   }
 
@@ -81,18 +80,8 @@ const MainComponent = styled.div<{ routingPageOffset: number }>`
     top: 0;
     left: 0;
     width: 100%;
-    opacity: 0.5;
-    animation: 500ms ${transitionSlideRight} 250ms
-      cubic-bezier(0.37, 0, 0.63, 1) both;
-    backface-visibility: hidden;
-  }
-
-  &.page-exit-done {
-    opacity: 0;
-  }
-
-  &.page-enter-done {
-    opacity: 1;
+    animation: 500ms ${transitionSlideIn} 250ms cubic-bezier(0.37, 0, 0.63, 1)
+      both;
   }
 `;
 

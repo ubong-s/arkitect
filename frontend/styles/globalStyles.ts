@@ -53,8 +53,8 @@ const bodyStyles = css`
     min-height: 100vh;
     background-color: ${(props) => props.theme.colors.white};
     z-index: 2;
-
     border-radius: 4.8rem;
+    overflow: hidden;
 
     ${media.tablet} {
       border-radius: 7.2rem;
@@ -86,6 +86,24 @@ const bodyStyles = css`
     }
   }
 
+  h1 {
+    font-size: 3.6rem;
+
+    span {
+      font-family: ${typography.type.secondary};
+      display: block;
+    }
+
+    ${media.tablet} {
+      font-size: 7.2rem;
+    }
+
+    ${media.desktop} {
+      font-size: 9.6rem;
+    }
+  }
+
+  h1,
   h2 {
     font-size: 3.6rem;
 
@@ -110,6 +128,7 @@ const bodyStyles = css`
   p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    line-height: 1.8;
 
     ${media.tablet} {
       font-size: 1.4rem;
