@@ -1,7 +1,7 @@
 import { FC, ReactNode } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle, myTheme, media } from '../../styles';
-import { Footer, Navbar } from '../_ui';
+import { Footer, Navbar, PageTransitions } from '../_ui';
 
 const PageWrap = styled.div`
   position: relative;
@@ -13,8 +13,10 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
       <GlobalStyle />
       <PageWrap>
         <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <PageTransitions>
+          <main>{children}</main>
+          <Footer />
+        </PageTransitions>
       </PageWrap>
     </ThemeProvider>
   );

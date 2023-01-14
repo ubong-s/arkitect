@@ -7,10 +7,12 @@ import { pages } from '../../data/routes';
 import { useRouter } from 'next/router';
 
 const HeaderRoot = styled.nav`
+  position: relative;
   display: flex;
   align-items: center;
   height: 10rem;
   margin-bottom: -10rem;
+  z-index: 5;
 
   ${media.tablet} {
     height: 16rem;
@@ -52,12 +54,17 @@ const NavLinks = styled.ul`
     transform: scale(1);
   }
 
+  ${media.tablet} {
+    top: 13rem;
+  }
+
   ${media.desktop} {
     top: unset;
     width: unset;
     right: unset;
     opacity: unset;
     transform: unset;
+    transform-origin: initial;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

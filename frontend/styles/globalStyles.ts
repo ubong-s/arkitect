@@ -49,8 +49,10 @@ const bodyStyles = css`
   }
 
   main {
+    position: relative;
     min-height: 100vh;
     background-color: ${(props) => props.theme.colors.white};
+    z-index: 2;
 
     border-radius: 4.8rem;
 
@@ -134,6 +136,20 @@ const bodyStyles = css`
 
   button {
     cursor: pointer;
+  }
+
+  .transition {
+    position: relative;
+    z-index: 1;
+    background-color: ${(props) => props.theme.colors.default};
+
+    &.active {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 1;
+      perspective: 1800px;
+    }
   }
 `;
 
